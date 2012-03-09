@@ -33,7 +33,7 @@ class GitVCS(object):
         obj = self.get_object(c.tree)
         for i, x in enumerate(paths):
             if not x:
-                return obj
+                break
             try:
                 _mode, sha1 = obj[x]
             except KeyError:

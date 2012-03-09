@@ -16,6 +16,10 @@ class GitTool(Tool):
         return os.path.join(settings.GITTOOL_REPOS_PATH,
                             os.path.normpath(self.project.path) + '.git')
 
+    def get_default_ref(self):
+        branches = self.branches()
+        return branches[sorted(self.branches())[0]] # TODO: No refs. Get last?
+
     def branches(self):
         return self.vcs.branches()
 
