@@ -1,10 +1,10 @@
 from django.conf import settings
 from django.conf.urls.defaults import patterns, include, url
 
-from .views import project_page, route_to_tool
+from .views import project_page
 
 urlpatterns = patterns('',
-    url(r'^(?P<path>[^~]*)/$', project_page, name='project_page'),
+    url(r'^(?P<prj_path>[^~]*)/$', project_page, name='project_page'),
 )
 
 for tool in settings.KRYPTON_TOOLS:

@@ -1,6 +1,7 @@
-def project_page(request, path):
-    print 1/0
+from orgprj.utils import fix_prj_path, project_exists
 
-def route_to_tool(request, path, tool):
-    print path, tool
+
+@fix_prj_path
+@project_exists
+def project_page(request, prj_path):
     print 1/0

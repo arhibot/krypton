@@ -1,8 +1,8 @@
 from django.conf.urls.defaults import patterns, include, url
 
-from .views import show_tree
+from .views import show_obj
 
 urlpatterns = patterns('',
-    url(r'(?P<path>.+)/~git/$', show_tree, name="show_default_tree", kwargs={'ref': None}),
-    url(r'(?P<path>.+)/~git/tree/(?P<ref>.*)/$', show_tree, name="show_ref_tree"),
+    url(r'(?P<prj_path>.+)/~git/$', show_obj, name="show_object", kwargs={'ref': None, 'otype': 'tree', 'fpath': '/'}),
+    url(r'(?P<prj_path>.+)/~git/(?P<otype>(tree|blob))/(?P<ref>[^/]+)/(?P<fpath>.*)/$', show_obj, name="show_object"),
 )
