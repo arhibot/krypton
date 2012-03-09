@@ -160,4 +160,6 @@ LOGGING = {
 
 
 from orgprj.settings import *
+from gittool.settings import *
+
 KRYPTON_TOOLS = ['gittool']

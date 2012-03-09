@@ -13,9 +13,7 @@ def create_gittool_env(sender, instance, created, **kwargs):
         return
     t = instance
     try:
-        repo_path = os.path.join(settings.GITTOOL_REPOS_PATH,
-                                 os.path.normpath(t.project.path) + '.git')
-        os.makedirs(repo_path)
+        repo_path = t.path_to_repo()
         repo.Repo.init_bare(repo_path)
     except OSError:
         pass
