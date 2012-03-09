@@ -100,7 +100,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-ROOT_URLCONF = 'ggit.urls'
+ROOT_URLCONF = 'krypton.urls'
 
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -160,4 +160,4 @@ LOGGING = {
 
 
 from orgprj.settings import *
-from gittool.settings import *
+KRYPTON_TOOLS = ['gittool']

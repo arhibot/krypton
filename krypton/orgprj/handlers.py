@@ -1,7 +1,7 @@
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 
-from ggit.orgprj.models import Project, UserProfile, Team, TeamMember
+from orgprj.models import Project, UserProfile, Team, TeamMember
 
 
 def create_user_env(sender, instance, created, **kwargs):
